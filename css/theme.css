@@ -1,0 +1,27 @@
+/*!   | (c) 2019 Biskuit | MIT License */
+
+.bk-navbar.uk-navbar {
+    box-shadow: 0 3px 8px -4px rgba(0,0,0,0.15);
+    background-color: #fff;
+    padding: 0 30px;
+  }
+
+.bk-hero {
+    margin: -80px 0 0 0;
+    padding: 150px 0 90px 0;
+}
+
+.bk-navbar.uk-navbar.bk-navbar-transparent {
+    background-color: 
+    transparent;
+    box-shadow: none;
+}
+
+.uk-navbar-nav > li > a {
+    font-weight: 600;
+}
+
+/* use alternative logo instead */
+.bk-navbar.uk-navbar.bk-navbar-transparent .uk-logo img {
+    filter: brightness(0) invert();
+}

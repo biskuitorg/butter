@@ -1,0 +1,7 @@
+{
+  "name": "theme-butter",
+  "dependencies": {
+    "uikit": "#master"
+  },
+  "private": true
+}

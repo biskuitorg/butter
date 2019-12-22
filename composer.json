@@ -1,0 +1,22 @@
+{
+    "name": "biskuit/theme-butter",
+    "type": "pagekit-theme",
+    "version": "1.0.1",
+    "title": "Butter",
+    "description": "Biskuit's default theme.",
+    "license": "MIT",
+    "copyright": "(c) 2019 Biskuit",
+    "authors": [
+        {
+            "name": "Biskuit",
+            "email": "info@biskuit.org",
+            "homepage": "https://biskuit.org"
+        }
+    ],
+    "extra": {
+        "image": "image.jpg"
+    },
+    "archive": {
+        "exclude": ["!/app", "!/css", "/app/assets"]
+    }
+}
