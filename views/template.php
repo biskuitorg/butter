@@ -58,7 +58,7 @@
         <?php endif; ?>
 
         <div class="uk-section uk-section-default <?= $params['main_style'] ?>">
-            <div class="uk-container uk-container">
+            <div class="uk-container uk-container-small">
 
                 <div class="uk-grid" uk-grid>
 

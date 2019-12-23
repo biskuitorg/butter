@@ -9,7 +9,7 @@
         <a class="uk-display-block" href="<?= $view->url('@blog/id', ['id' => $post->id]) ?>"><img src="<?= $image ?>" alt="<?= $post->get('image.alt') ?>"></a>
         <?php endif ?>
 
-        <h1 class="uk-heading-small"><a href="<?= $view->url('@blog/id', ['id' => $post->id]) ?>"><?= $post->title ?></a></h1>
+        <h1 class="uk-article-title"><a class="uk-link-reset" href="<?= $view->url('@blog/id', ['id' => $post->id]) ?>"><?= $post->title ?></a></h1>
 
         <p class="uk-article-meta">
             <?= __('Written by %name% on %date%', ['%name%' => $post->user->name, '%date%' => '<time datetime="'.$post->date->format(\DateTime::W3C).'" v-cloak>{{ "'.$post->date->format(\DateTime::W3C).'" | date "longDate" }}</time>' ]) ?>
@@ -17,18 +17,17 @@
 
         <div class="uk-margin"><?= $post->excerpt ?: $post->content ?></div>
 
-        <div class="uk-margin-large-top">
-            <ul class="uk-subnav uk-margin-remove-bottom">
-
+        <div class="uk-grid-small uk-child-width-auto" uk-grid>
+            <div>
                 <?php if (isset($post->readmore) && $post->readmore || $post->excerpt) : ?>
-                <li><a href="<?= $view->url('@blog/id', ['id' => $post->id]) ?>"><?= __('Read more') ?></a></li>
+                <li><a class="uk-button uk-button-text" href="<?= $view->url('@blog/id', ['id' => $post->id]) ?>"><?= __('Read more') ?></a></li>
                 <?php endif ?>
-
+            </div>
+            <div>
                 <?php if ($post->isCommentable() || $post->comment_count) : ?>
-                <li><a href="<?= $view->url('@blog/id#comments', ['id' => $post->id]) ?>"><?= _c('{0} No comments|{1} %num% Comment|]1,Inf[ %num% Comments', $post->comment_count, ['%num%' => $post->comment_count]) ?></a></li>
+                <li><a class="uk-button uk-button-text" href="<?= $view->url('@blog/id#comments', ['id' => $post->id]) ?>"><?= _c('{0} No comments|{1} %num% Comment|]1,Inf[ %num% Comments', $post->comment_count, ['%num%' => $post->comment_count]) ?></a></li>
                 <?php endif ?>
-
-            </ul>
+            </div>
         </div>
 
     </article>
