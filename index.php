@@ -147,7 +147,7 @@ return [
             }
 
             if ($params['hero_parallax'] && $view->position()->exists('hero') && $params['hero_image']) {
-                $classes['parallax'] = 'data-uk-parallax="{bg: \'-400\'}"';
+                $classes['parallax'] = 'uk-parallax="bgy: -200"';
             }
 
             if ($params['hero_contrast'] && $params['hero_image']) {
