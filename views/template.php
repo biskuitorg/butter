@@ -91,9 +91,9 @@
 
         <?php if ($view->position()->exists('footer')) : ?>
         <div class="uk-section uk-section-secondary uk-light">
-            <div class="uk-container uk-container">
+            <div class="uk-container">
 
-                <section class="uk-grid uk-grid-match" uk-grid>
+                <section class="uk-grid-match uk-child-width-1-3@m" uk-grid></section>
                     <?= $view->position('footer', 'position-grid.php') ?>
                 </section>
 
