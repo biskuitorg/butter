@@ -154,7 +154,7 @@ return [
                 $classes['hero'] .= ' uk-contrast';
             }
 
-            $classes['sticky'] = 'data-uk-sticky=\''.json_encode($sticky).'\'';
+            $classes['sticky'] = 'uk-sticky=\''.json_encode($sticky).'\'';
 
             $params['classes'] = $classes;
         },

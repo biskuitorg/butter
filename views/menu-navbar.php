@@ -3,17 +3,17 @@
 <?php endif ?>
 
     <?php foreach ($root->getChildren() as $node) : ?>
-    <li class="<?= $node->hasChildren() ? 'uk-parent' : '' ?><?= $node->get('active') ? ' uk-active' : '' ?>" <?= ($root->getDepth() === 0 && $node->hasChildren()) ? 'data-uk-dropdown':'' ?>>
+    <li class="<?= $node->get('active') ? ' uk-active' : '' ?>">
         <a href="<?= $node->getUrl() ?>"><?= $node->title ?></a>
 
         <?php if ($node->hasChildren()) : ?>
 
             <?php if ($root->getDepth() === 0) : ?>
-            <div class="uk-dropdown uk-dropdown-navbar">
+            <div class="uk-navbar-dropdown">
             <?php endif ?>
 
                 <?php if ($root->getDepth() === 0) : ?>
-                <ul class="uk-nav uk-nav-navbar">
+                <ul class="uk-nav uk-navbar-dropdown-nav">
                 <?php elseif ($root->getDepth() === 1) : ?>
                 <ul class="uk-nav-sub">
                 <?php else : ?>

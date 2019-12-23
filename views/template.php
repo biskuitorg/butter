@@ -7,7 +7,6 @@
         <?= $view->render('head') ?>
         <?php $view->style('uikit3', 'theme:css/uikit/uikit.min.css') ?>
         <?php $view->style('theme', 'theme:css/theme.css') ?>
-        <?php $view->script('theme', 'theme:js/theme.js') ?>
         <?php $view->script('uikit3', 'theme:js/uikit/uikit.min.js') ?>
         <?php $view->script('uikit3_icons', 'theme:js/uikit/uikit-icons.min.js') ?>
     </head>
@@ -15,10 +14,9 @@
 
         <?php if ($params['logo'] || $view->menu()->exists('main') || $view->position()->exists('navbar')) : ?>
             <div class="uk-position-relative">
-
-                <nav class="uk-navbar <?= $params['classes.navbar'] ?>" <?= $params['classes.sticky'] ?>>
+                <nav class="<?= $params['classes.navbar'] ?>" <?= $params['classes.sticky'] ?> uk-navbar>
                     <div class="uk-navbar-left">
-                        <a class="uk-logo" href="<?= $view->url()->get() ?>">
+                        <a class="uk-navbar-item uk-logo" href="<?= $view->url()->get() ?>">
                             <?php if ($params['logo']) : ?>
                                 <img src="<?= $this->escape($params['logo']) ?>" alt="">
                             <?php else : ?>
@@ -35,12 +33,10 @@
                         </div>
                         <?php endif ?>
                         <div class="uk-navbar-nav">
-                            <a href="#offcanvas" class="uk-navbar-toggle" uk-toggle uk-navbar-toggle-icon></a>
+                            <button uk-toggle="target: #offcanvas" uk-navbar-toggle-icon type="button"></button>
                         </div>
                     </div>
                 </nav>
-
-                <div class="uk-navbar-dropbar"></div>
 
             </div>
         <?php endif ?>
@@ -106,9 +102,9 @@
         <?php endif; ?>
 
         <?php if ($view->position()->exists('offcanvas') || $view->menu()->exists('offcanvas')) : ?>
-        <div id="offcanvas" uk-offcanvas>
-            <div class="uk-offcanvas-bar" uk-offcanvas>
-
+        <div id="offcanvas" uk-offcanvas="mode: reveal; overlay: true">
+            <div class="uk-offcanvas-bar uk-flex uk-flex-column">
+                <button class="uk-offcanvas-close" type="button" uk-close></button>
                 <?php if ($params['logo_offcanvas']) : ?>
                 <div class="uk-panel uk-text-center">
                     <a href="<?= $view->url()->get() ?>">
