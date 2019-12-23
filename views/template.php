@@ -27,13 +27,13 @@
 
                     <div class="uk-navbar-right">
                         <?php if ($view->menu()->exists('main') || $view->position()->exists('navbar')) : ?>
-                        <div class="uk-navbar-nav">
+                        <div class="uk-navbar-nav bk-navbar-main">
                             <?= $view->menu('main', 'menu-navbar.php') ?>
                             <?= $view->position('navbar', 'position-blank.php') ?>
                         </div>
                         <?php endif ?>
                         <div class="uk-navbar-nav">
-                            <button uk-toggle="target: #offcanvas" uk-navbar-toggle-icon type="button"></button>
+                            <button class="bk-hamburger" uk-toggle="target: #offcanvas" uk-navbar-toggle-icon type="button"></button>
                         </div>
                     </div>
                 </nav>

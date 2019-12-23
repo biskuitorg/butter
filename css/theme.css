@@ -21,7 +21,20 @@
     font-weight: 600;
 }
 
+.bk-hamburger {
+    display: none;
+}
+
 /* use alternative logo instead */
 .bk-navbar.uk-navbar.bk-navbar-transparent .uk-logo img {
     filter: brightness(0) invert();
+}
+
+@media screen and (max-width: 615px) {
+    .bk-hamburger {
+        display: block;
+    }
+    .bk-navbar-main {
+        display: none;
+    }
 }
